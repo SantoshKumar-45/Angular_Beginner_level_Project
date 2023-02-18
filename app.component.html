@@ -1,0 +1,53 @@
+
+<div class="container">
+  <h1>User Details</h1>
+  <table >
+       <tr style="background-color:red">
+           <th>Id</th>
+           <th>Email</th>
+           <th>UserName</th>
+           <th>Password</th>
+           <th >Name</th>
+           <th>Address</th>
+           <th>Phone</th>
+      </tr>    
+         <tr *ngFor="let User of Apiuser ">
+        <td>{{User.id}}</td>
+        <td>{{User.email}}</td>
+        <td>{{User.username}}</td>
+        <td>{{User.password}}</td>
+               <!-- <ng-container *ngFor="let UsName of User.name">
+          {{UsName.firstname}}
+        </ng-container>
+        <th colspan="=2">
+          {{UsName.firstname}}
+        </th> -->
+      <td>{{User.name.firstname}} {{User.name.lastname}}</td>
+      <td>{{User.address.city}} &nbsp;&nbsp;{{User.address.street}}&nbsp;&nbsp;{{User.address.number}}&nbsp;&nbsp;{{User.address.zipcode}}</td>
+       <td>{{User.phone}}</td>
+      </tr>     
+      </table>
+</div>
+<div class="container">
+  <h1>Products Details</h1>
+  <table>
+    <tr>
+      <th>id:</th>
+      <th>title:</th>
+      <th>price:</th>
+      <th>category:</th>
+      <th>description:</th>
+      <th> image:</th>
+    </tr>
+    <tr *ngFor="let product of Products">
+      <td>{{product.id}}</td>
+      <td>{{product.title}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.description}}</td>
+      <td> <img [src]="product.image" style="width: 100px; height: 100px;"> </td>
+
+    </tr>
+  </table>
+</div>
+     
